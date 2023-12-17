@@ -1,0 +1,14 @@
+
+<ul>
+    {% for pet in object_list %}
+    <li>
+        <a href="{{ pet.get_absolute_url }}">{{ pet.title }}</a>
+        <a href="{% url 'update-pet' pet.id %}">Update</a>
+    </li>
+
+    {% endfor %}
+</ul>
+
+<div>
+    <a href="{% url 'add-pet' %}"><button>Add Pet</button></a>
+</div>
